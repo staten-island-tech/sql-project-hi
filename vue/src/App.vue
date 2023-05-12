@@ -1,12 +1,11 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <h1>Website</h1>
+  <h1>Black Market</h1>
   <nav>
-    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/">Store</RouterLink>
     <RouterLink to="/login">Login</RouterLink>
   </nav>
 
