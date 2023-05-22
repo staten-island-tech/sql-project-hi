@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1>Black Market</h1>
   <nav>
     <RouterLink to="/">Store</RouterLink>
     <RouterLink to="/login">Login</RouterLink>
@@ -22,11 +21,11 @@ h1 {
 
 nav {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 4rem;
   text-align: center;
-  margin-top: 1rem;
   font-family: 'Jaldi', sans-serif;
   font-weight: bold;
+  background-color: white;
 }
 
 nav a.router-link-exact-active {

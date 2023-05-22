@@ -1,15 +1,29 @@
 <template>
   <div class="login">
-    <h1>This is an login page</h1>
+    <h1>Login Page</h1>
+    <button @click="authState" v-if="loggedIn">Log Out</button>
+    <button @click="authState" v-else>Login</button>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .login {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<script>
+export default {
+  name: "login",
+  data(){
+    return{
+      loggedIn: true,
+    },
+  },
 }
-</style>
+methods: {
+      authState: function(){
+        if (this.loggedIn === false) {
+        this.loggedIn = true;
+      } else {
+        this.loggedIn = false;
+      },
+    },
+  }
+</script>
+
+<style scoped></style>
