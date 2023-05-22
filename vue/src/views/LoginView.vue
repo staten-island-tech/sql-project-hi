@@ -11,7 +11,7 @@
 
 <style scoped>
 .login {
-  margin-top: 4rem;
+  margin: auto;
   padding: 2rem;
   font-size: 1.4rem;
   font-family: 'Jaldi', sans-serif;
