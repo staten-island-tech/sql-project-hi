@@ -27,6 +27,7 @@ nav {
   margin-top: 1rem;
   font-family: 'Jaldi', sans-serif;
   font-weight: bold;
+  margin-bottom: 3rem;
 }
 
 nav a.router-link-exact-active {
