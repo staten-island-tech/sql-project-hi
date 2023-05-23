@@ -12,20 +12,14 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-h1 {
-  font-family: 'Shrikhand', cursive;
-  margin-top: 3rem;
-  font-size: 4rem;
-  color: rgb(130, 148, 196);
-}
 
 nav {
   width: 100%;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   font-family: 'Jaldi', sans-serif;
   font-weight: bold;
-  background-color: white;
+  margin-bottom: 1rem;
 }
 
 nav a.router-link-exact-active {

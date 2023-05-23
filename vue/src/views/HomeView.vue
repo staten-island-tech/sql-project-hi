@@ -1,14 +1,11 @@
 <template>
-  <div class="market">
-    <h1>Puppy Palace</h1>
+  <div>
+    <h1>Hadestown Playlist</h1>
   </div>
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
