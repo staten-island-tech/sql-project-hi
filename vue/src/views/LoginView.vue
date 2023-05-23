@@ -1,14 +1,20 @@
 <template>
-  <h1>Login</h1>
-  <div class="login">
-    <form class="reqs">
-      <label for="username">Username:</label> <input type="text" id="username" name="username" />
-      <label for="password">Password:</label> <input type="text" id="password" name="password" />
-    </form>
-    <button class="loginbtn">Login</button>
-    <h2>Don't have an account? Create one!</h2>
+  <div>
+    <h1>Login</h1>
+    <div class="login">
+      <form class="reqs">
+        <label for="username">Username:</label> <input type="text" id="username" name="username" />
+        <label for="password">Password:</label> <input type="text" id="password" name="password" />
+      </form>
+      <button class="loginbtn">Login</button>
+      <h2>Don't have an account? Create one!</h2>
+    </div>
   </div>
 </template>
+
+<script>
+export default {}
+</script>
 
 <style scoped>
 .login {
@@ -19,6 +25,7 @@
   background: rgb(130, 148, 196);
   width: 60rem;
   border-radius: 3rem;
+  color: black;
 }
 h2 {
   font-size: 3rem;
@@ -31,25 +38,14 @@ h2 {
 }
 .loginbtn {
   margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   border: none;
   border-radius: 15px;
-  width: 80px;
+  width: 10rem;
 }
 #username,
 #password {
   border: none;
   height: 40px;
 }
-methods: {
-      authState: function(){
-        if (this.loggedIn === false) {
-        this.loggedIn = true;
-      } else {
-        this.loggedIn = false;
-      },
-    },
-  }
-</script>
-
-<style scoped></style>
+</style>
