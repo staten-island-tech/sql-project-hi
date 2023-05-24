@@ -1,16 +1,25 @@
 <template>
-  <div class="login">
+  <div class="signup">
     <form class="reqs">
+      <label for="email">Email:</label> <input type="text" id="email" name="email" />
       <label for="username">Username:</label> <input type="text" id="username" name="username" />
       <label for="password">Password:</label> <input type="text" id="password" name="password" />
     </form>
-    <button class="loginbtn">Login</button>
-    <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
+    <button class="signupbtn">Sign Up</button>
+    <RouterLink to="/login" class="login">Already have an account? Login!</RouterLink>
   </div>
 </template>
 
+<script>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+const email = ref('')
+const username = ref('')
+const password = ref('')
+</script>
+
 <style scoped>
-.login {
+.signup {
   margin: auto;
   padding: 2rem;
   font-size: 1.4rem;
@@ -19,7 +28,7 @@
   width: 450px;
   border-radius: 20px;
 }
-.signup {
+.login {
   font-size: 1.2rem;
   margin-top: 1rem;
   color: black;
@@ -30,7 +39,7 @@
   display: flex;
   flex-direction: column;
 }
-.loginbtn {
+.signupbtn {
   margin-top: 20px;
   font-size: 1rem;
   border: none;
@@ -38,6 +47,7 @@
   width: 80px;
 }
 #username,
+#email,
 #password {
   border: none;
   height: 40px;
