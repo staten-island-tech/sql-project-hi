@@ -20,6 +20,11 @@
   width: 60rem;
   border-radius: 3rem;
 }
+h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: black;
+}
 .signup {
   font-size: 1.2rem;
   margin-top: 1rem;
