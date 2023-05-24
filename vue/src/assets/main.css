@@ -65,7 +65,15 @@ body {
 body {
   background-color: #ffebd7;
 }
-
+button,
+button:link,
+button:visited {
+  transition: all 0.2s;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 1rem rgba(0, 0, 0, 0.2);
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -79,7 +87,6 @@ a,
   color: rgb(130, 148, 196);
   transition: 0.4s;
 }
-
 @media (hover: hover) {
   a:hover {
     background-color: hsla(0, 0%, 60%, 0.123);

@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div>
     <h1>Login</h1>
@@ -7,7 +11,12 @@
         <label for="password">Password:</label> <input type="text" id="password" name="password" />
       </form>
       <button class="loginbtn">Login</button>
-      <h2>Don't have an account? Create one!</h2>
+      <h2>
+        Don't have an account?
+        <nav>
+          <RouterLink to="/">Store</RouterLink>
+        </nav>
+      </h2>
     </div>
   </div>
 </template>
@@ -22,7 +31,7 @@ export default {}
   padding: 2rem;
   font-size: 6rem;
   font-family: 'Jaldi', sans-serif;
-  background: rgb(130, 148, 196);
+  background: #8294c4;
   width: 60rem;
   border-radius: 3rem;
   color: black;
@@ -31,6 +40,7 @@ h2 {
   font-size: 3rem;
   margin-top: 1rem;
   color: black;
+  margin-bottom: 0rem;
 }
 .reqs {
   display: flex;
@@ -42,6 +52,13 @@ h2 {
   border: none;
   border-radius: 15px;
   width: 10rem;
+}
+.createbtn {
+  background-color: #8294c4;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  width: 0rem;
 }
 #username,
 #password {
