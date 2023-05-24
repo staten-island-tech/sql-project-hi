@@ -1,31 +1,34 @@
 <template>
-  <h1>Login</h1>
-  <div class="login">
+  <div class="signup">
     <form class="reqs">
+      <label for="email">Email:</label> <input type="text" id="email" name="email" />
       <label for="username">Username:</label> <input type="text" id="username" name="username" />
       <label for="password">Password:</label> <input type="text" id="password" name="password" />
     </form>
-    <button class="loginbtn">Login</button>
-    <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
+    <button class="signupbtn">Sign Up</button>
+    <RouterLink to="/login" class="login">Already have an account? Login!</RouterLink>
   </div>
 </template>
 
+<script>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+const email = ref('')
+const username = ref('')
+const password = ref('')
+</script>
+
 <style scoped>
-.login {
+.signup {
   margin: auto;
   padding: 2rem;
-  font-size: 6rem;
+  font-size: 1.4rem;
   font-family: 'Jaldi', sans-serif;
   background: rgb(130, 148, 196);
-  width: 60rem;
-  border-radius: 3rem;
+  width: 450px;
+  border-radius: 20px;
 }
-h2 {
-  font-size: 3rem;
-  margin-top: 1rem;
-  color: black;
-}
-.signup {
+.login {
   font-size: 1.2rem;
   margin-top: 1rem;
   color: black;
@@ -36,14 +39,15 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-.loginbtn {
-  margin-top: 2rem;
-  font-size: 2rem;
+.signupbtn {
+  margin-top: 20px;
+  font-size: 1rem;
   border: none;
   border-radius: 15px;
   width: 80px;
 }
 #username,
+#email,
 #password {
   border: none;
   height: 40px;
