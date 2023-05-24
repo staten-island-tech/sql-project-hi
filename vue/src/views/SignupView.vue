@@ -13,9 +13,13 @@
 <script>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
+import { supabase } from '../lib/supabaseClient.js'
 const email = ref('')
 const username = ref('')
 const password = ref('')
+export default {
+  components: { supabase }
+}
 </script>
 
 <style scoped>
