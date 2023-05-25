@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <h1>Login</h1>
     <form class="reqs">
       <label for="username">Username:</label> <input type="text" id="username" name="username" />
       <label for="password">Password:</label> <input type="text" id="password" name="password" />
@@ -10,6 +11,10 @@
 </template>
 
 <style scoped>
+h1 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 3rem;
+}
 .login {
   margin: auto;
   padding: 2rem;
