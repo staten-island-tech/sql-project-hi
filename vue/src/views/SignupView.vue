@@ -57,6 +57,7 @@ export default {
   background: rgb(130, 148, 196);
   width: 60rem;
   border-radius: 20px;
+  color: black;
 }
 .login {
   font-size: 2rem;
