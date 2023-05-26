@@ -5,7 +5,6 @@ import { RouterLink } from 'vue-router'
 <template>
   <h1>Login</h1>
   <div class="login">
-    <h1>Login</h1>
     <form class="reqs">
       <label for="username">Username:</label> <input type="text" id="username" name="username" />
       <label for="password">Password:</label> <input type="text" id="password" name="password" />
@@ -22,10 +21,6 @@ export default {}
 </script>
 
 <style scoped>
-h1 {
-  font-family: 'Shrikhand', cursive;
-  font-size: 3rem;
-}
 .login {
   margin: auto;
   padding: 2rem;
@@ -43,7 +38,7 @@ h2 {
   margin-bottom: 0rem;
 }
 .signup {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-top: 1rem;
   color: black;
   display: flex;
