@@ -3,21 +3,17 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <div>
+  <h1>Login</h1>
+  <div class="login">
     <h1>Login</h1>
-    <div class="login">
-      <form class="reqs">
-        <label for="username">Username:</label> <input type="text" id="username" name="username" />
-        <label for="password">Password:</label> <input type="text" id="password" name="password" />
-      </form>
-      <button class="loginbtn">Login</button>
-      <h2>
-        Don't have an account?
-        <nav>
-          <RouterLink to="/">Store</RouterLink>
-        </nav>
-      </h2>
-    </div>
+    <form class="reqs">
+      <label for="username">Username:</label> <input type="text" id="username" name="username" />
+      <label for="password">Password:</label> <input type="text" id="password" name="password" />
+    </form>
+    <button class="loginbtn">Login</button>
+    <nav>
+      <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
+    </nav>
   </div>
 </template>
 
@@ -26,6 +22,10 @@ export default {}
 </script>
 
 <style scoped>
+h1 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 3rem;
+}
 .login {
   margin: auto;
   padding: 2rem;
@@ -41,6 +41,13 @@ h2 {
   margin-top: 1rem;
   color: black;
   margin-bottom: 0rem;
+}
+.signup {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
 }
 .reqs {
   display: flex;
