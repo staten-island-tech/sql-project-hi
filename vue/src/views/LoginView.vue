@@ -7,7 +7,8 @@ import { RouterLink } from 'vue-router'
   <div class="login">
     <form class="reqs">
       <label for="username">Username:</label> <input type="text" id="username" name="username" />
-      <label for="password">Password:</label> <input type="text" id="password" name="password" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
     </form>
     <button class="loginbtn">Login</button>
     <nav>
