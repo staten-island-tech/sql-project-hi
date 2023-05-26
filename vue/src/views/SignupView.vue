@@ -5,7 +5,8 @@
       <label for="email">Email:</label> <input type="text" id="email" v-model="email" />
       <label for="username">Username:</label>
       <input type="text" id="username" v-model="username" />
-      <label for="password">Password:</label> <input type="text" id="password" v-model="password" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" v-model="password" />
     </form>
     <button class="signupbtn" @click="SignUp()">Signup</button>
     <nav>
