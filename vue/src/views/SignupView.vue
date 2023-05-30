@@ -1,0 +1,86 @@
+<template>
+  <h1>Signup</h1>
+  <div class="signup">
+    <form class="reqs">
+      <label for="email">Email:</label> <input type="text" id="email" v-model="email" />
+      <label for="username">Username:</label>
+      <input type="text" id="username" v-model="username" />
+      <label for="password">Password:</label> <input type="password" id="password" v-model="password" />
+    </form>
+    <button class="signupbtn" @click="SignUp()">Signup</button>
+    <nav>
+      <RouterLink to="/login" class="login">Already have an account? Login!</RouterLink>
+    </nav>
+  </div>
+</template>
+
+<script>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import { supabase } from '../lib/supabaseClient.js'
+const email = ref('')
+const username = ref('')
+const password = ref('')
+export default {
+  components: { supabase },
+  data() {
+    return {
+      username,
+      email,
+      password
+    }
+  },
+  methods: {
+    async SignUp() {
+      try {
+        console.log(email.value, username.value, password.value)
+        const { error } = await supabase.auth.signUp({
+          email: email.value,
+          username: username.value,
+          password: password.value
+        })
+        if (error) throw error
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.signup {
+  margin: auto;
+  padding: 2rem;
+  font-size: 6rem;
+  font-family: 'Jaldi', sans-serif;
+  background: rgb(130, 148, 196);
+  width: 60rem;
+  border-radius: 20px;
+  color: black;
+}
+.login {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.reqs {
+  display: flex;
+  flex-direction: column;
+}
+.signupbtn {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  width: 12rem;
+}
+#username,
+#email,
+#password {
+  border: none;
+  height: 40px;
+}
+</style>

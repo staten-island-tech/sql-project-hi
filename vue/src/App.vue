@@ -17,7 +17,6 @@ nav {
   width: 100%;
   font-size: 3rem;
   text-align: center;
-  margin-top: 1rem;
   font-family: 'Jaldi', sans-serif;
   font-weight: bold;
   margin-bottom: 1rem;
