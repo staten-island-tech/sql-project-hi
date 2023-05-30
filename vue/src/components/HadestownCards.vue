@@ -1,20 +1,18 @@
 <template>
 <div class="card">
-    <h2>{{name}}</h2>
-    <img :src="image"/>
-    <p>{{ ranking }}</p>
+    <h2>{{name}}</h2>x
+    <img src="https://i.scdn.co/image/ab67616d00001e02b62a5129d9efa26386143622" alt="Hadestown Spotify Image">
+    <h3>Ranking: #{{ ranking }}</h3>
 </div>
 </template>
 
 <script>
     export default {
-        name: "Card",
+        name: "HadestownCards",
         props: {
-            title: String,
-            image: String,
+            name: String,
             ranking: Number
         },
-
     }
 
 </script>
@@ -27,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid var(--fourth);
+  border: 1rem solid var(--quaternary);
   box-sizing: border-box;
   margin: 20px;
   border-radius: 20px;
@@ -37,6 +35,10 @@
   line-height: 1.1;
   width: 30%;
   font-family: 'Courier Prime', monospace;
+}   
+h2, h3{
+    color: var(--tertiary);
+    padding: 1rem;
 }
 
 </style>

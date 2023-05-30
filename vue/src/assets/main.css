@@ -14,14 +14,19 @@ body,
 :root {
   --black: #000;
   --white: #ffffff;
-  --color1: #ffebd7;
-  --color2: #8294c4;
-  --color3: #184a76;
+  --color2: #fbeec7;
+  --color3: #b50d15;
+  --color1: #362a1d;
+  --color4: #1b150e;
+  --color5: #ffebd7;
+  --color6: #8294c4;
+  --color7: #184a76;
 
   /*Intentions*/
   --primary: var(--color1);
   --secondary: var(--color2);
   --tertiary: var(--color3);
+  --quaternary: var(--color4);
 
   /*Typography*/
   --h1: 7.594rem;
@@ -35,7 +40,7 @@ h1 {
   font-family: 'Shrikhand', cursive;
   margin-bottom: 2rem;
   font-size: 7rem;
-  color: #8294c4;
+  color: var(--tertiary);
 }
 h2 {
   font-size: var(--h2);
@@ -62,9 +67,6 @@ h5 {
 body {
   background-color: var(--primary);
 }
-body {
-  background-color: #ffebd7;
-}
 button,
 button:link,
 button:visited {
@@ -84,7 +86,7 @@ button:hover {
 a,
 .blue {
   text-decoration: none;
-  color: rgb(130, 148, 196);
+  color: var(--secondary);
   transition: 0.4s;
 }
 @media (hover: hover) {
