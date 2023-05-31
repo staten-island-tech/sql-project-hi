@@ -54,15 +54,17 @@ export default {
   padding: 2rem;
   font-size: 6rem;
   font-family: 'Jaldi', sans-serif;
-  background: rgb(130, 148, 196);
+  background: var(--secondary);
   width: 60rem;
   border-radius: 20px;
-  color: black;
+  color: var(--tertiary);
+  border: 0.5rem solid var(--fourth);
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
 .login {
   font-size: 2rem;
   margin-top: 1rem;
-  color: black;
+  color: var(--tertiary);
   display: flex;
   flex-direction: column;
 }
@@ -76,6 +78,7 @@ export default {
   border: none;
   border-radius: 15px;
   width: 12rem;
+  color: var(--tertiary);
 }
 #username,
 #email,

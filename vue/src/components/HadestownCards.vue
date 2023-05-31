@@ -19,13 +19,15 @@
 
 <style scoped>
 
-
+img {
+    border-radius: 1rem;
+}
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1rem solid var(--quaternary);
+  border: 1rem solid var(--fourth);
   box-sizing: border-box;
   margin: 20px;
   border-radius: 20px;

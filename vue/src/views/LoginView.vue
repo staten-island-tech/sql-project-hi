@@ -27,21 +27,23 @@ export default {}
   padding: 2rem;
   font-size: 6rem;
   font-family: 'Jaldi', sans-serif;
-  background: #8294c4;
+  background: var(--secondary);
   width: 60rem;
   border-radius: 3rem;
-  color: black;
+  color: var(--tertiary);
+  border: 0.5rem solid var(--fourth);
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
 h2 {
   font-size: 3rem;
   margin-top: 1rem;
-  color: black;
+  color: var(--tertiary);
   margin-bottom: 0rem;
 }
 .signup {
   font-size: 2rem;
   margin-top: 1rem;
-  color: black;
+  color: var(--tertiary);
   display: flex;
   flex-direction: column;
 }
@@ -55,17 +57,12 @@ h2 {
   border: none;
   border-radius: 15px;
   width: 10rem;
-}
-.createbtn {
-  background-color: #8294c4;
-  font-size: 2.5rem;
-  border: none;
-  border-radius: 15px;
-  width: 0rem;
+  color: var(--tertiary);
 }
 #username,
 #password {
   border: none;
   height: 40px;
 }
+
 </style>
