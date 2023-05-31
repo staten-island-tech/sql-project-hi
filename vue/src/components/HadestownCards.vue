@@ -35,6 +35,7 @@
   line-height: 1.1;
   width: 30%;
   font-family: 'Courier Prime', monospace;
+  height: 600px;
 }   
 h2, h3{
     color: var(--tertiary);
