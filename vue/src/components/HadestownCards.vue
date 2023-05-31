@@ -1,7 +1,8 @@
 <template>
 <div class="card">
-    <h2>{{name}}</h2>x
+    <h2>{{name}}</h2>
     <img src="https://i.scdn.co/image/ab67616d00001e02b62a5129d9efa26386143622" alt="Hadestown Spotify Image">
+<!--     <a href={{ spotify }}><img src="https://i.scdn.co/image/ab67616d00001e02b62a5129d9efa26386143622" alt="Hadestown Spotify Image"></a> -->
     <h3>Ranking: #{{ ranking }}</h3>
 </div>
 </template>
@@ -11,7 +12,8 @@
         name: "HadestownCards",
         props: {
             name: String,
-            ranking: Number
+            ranking: Number,
+            spotify: String,
         },
     }
 
