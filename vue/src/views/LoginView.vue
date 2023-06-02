@@ -6,19 +6,49 @@ import { RouterLink } from 'vue-router'
   <h1>Login</h1>
   <div class="login">
     <form class="reqs">
-      <label for="username">Username:</label> <input type="text" id="username" name="username" />
+      <label for="email">Email:</label> <input type="text" id="username" v-model="email" />
+      <label for="username">Username:</label>
+      <input type="text" id="username" v-model="username" />
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" />
+      <input type="password" id="password" v-model="password" />
     </form>
-    <button class="loginbtn">Login</button>
-    <nav>
-      <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
-    </nav>
+    <button class="loginbtn" @click="Login()">Login</button>
+    <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
   </div>
 </template>
 
 <script>
-export default {}
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+import { supabase } from '../lib/supabaseClient.js'
+const email = ref('')
+const password = ref('')
+const username = ref('')
+export default {
+  components: { supabase },
+  data() {
+    return {
+      email,
+      password,
+      username
+    }
+  },
+  methods: {
+    async Login() {
+      try {
+        console.log(email.value, username.value, password.value)
+        const { error } = await await supabase.auth.signInWithPassword({
+          email: email.value,
+          password: password.value,
+          username: username.value
+        })
+        if (error) throw error
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -64,5 +94,4 @@ h2 {
   border: none;
   height: 40px;
 }
-
 </style>
