@@ -6,7 +6,7 @@
     <h3>Ranking: #{{ ranking }}</h3>
 </div>
 </template>
-
+     
 <script>
     export default {
         name: "HadestownCards",
