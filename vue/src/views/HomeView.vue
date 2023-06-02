@@ -21,13 +21,51 @@ export default {
     return {
       songs: [
         {
-          name: 'Chant',
+          name: "All I've ever known",
           ranking: 1
         },
         {
-          name: 'Wait For Me',
+          name: 'When the Chips are Down',
           ranking: 2
         },
+        {
+          name: "Wait for Me Reprise",
+          ranking: 3
+        },
+        {
+          name: "Flowers",
+          ranking: 4
+        },
+        {name: "Chant",
+        ranking: 5
+        },
+        {name: "Promises",
+      ranking: 6
+    },
+    {
+      name: "Doubt Comes in",
+      ranking: 7
+    },
+    {
+      name: "Any Way the Wind Blows",
+      ranking: 8
+    },
+    {
+      name: "Way Down Hadestown",
+    ranking: 9
+    },
+    {
+      name: "Livin' it Up on Top",
+      ranking: 10
+    },
+    {
+      name: "Come Home with Me",
+      ranking: 11
+    },
+    {
+      name: "Wait for Me",
+      ranking: 12
+    }
       ]
     }
   }
