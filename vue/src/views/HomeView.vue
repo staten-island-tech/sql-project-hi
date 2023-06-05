@@ -43,7 +43,7 @@ export default {
       ranking: 6
     },
     {
-      name: "Doubt Comes in",
+      name: "Come Home with Me",
       ranking: 7
     },
     {
@@ -55,11 +55,11 @@ export default {
     ranking: 9
     },
     {
-      name: "Livin' it Up on Top",
+      name: "Doubt Comes in",
       ranking: 10
     },
     {
-      name: "Come Home with Me",
+      name: "Livin' it Up on Top",
       ranking: 11
     },
     {
