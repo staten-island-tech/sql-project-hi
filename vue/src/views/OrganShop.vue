@@ -7,15 +7,18 @@
     </nav>
     <h1>Organ Shop!!!</h1>
     <div class="display">
-      <OrganCard/>
+      <OrganCard />
     </div>
   </div>
 </template>
 
 <script>
 import { RouterLink } from 'vue-router'
-import OrganCard from '../components/OrganCard.vue';
-export default { components: { OrganCard } }
+import OrganCard from '../components/OrganCard.vue'
+export default { 
+  components: { OrganCard },
+}
+
 </script>
 
 <style scoped></style>
