@@ -3,6 +3,10 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
+  <nav>
+    <RouterLink to="/">Store</RouterLink>
+    <RouterLink to="/login">Login</RouterLink>
+  </nav>
   <h1>Login</h1>
   <div class="login">
     <form class="reqs">

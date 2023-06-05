@@ -1,4 +1,8 @@
 <template>
+  <nav>
+    <RouterLink to="/">Store</RouterLink>
+    <RouterLink to="/login">Login</RouterLink>
+  </nav>
   <h1>Signup</h1>
   <div class="signup">
     <form class="reqs">

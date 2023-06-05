@@ -1,18 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <nav>
-    <RouterLink to="/">Store</RouterLink>
-    <RouterLink to="/login">Login</RouterLink>
-  </nav>
-
   <RouterView />
 </template>
 
-<style scoped>
-
+<style>
 nav {
   width: 100%;
   font-size: 3rem;
