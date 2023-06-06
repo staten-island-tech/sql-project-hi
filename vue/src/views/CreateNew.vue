@@ -3,8 +3,8 @@
     <h1>Create New Listing</h1>
     <form class="reqs">
       <label for="name">Name:</label> <input type="text" id="name" v-model="name" />
-      <label for="image">Image:</label>
-      <input type="text" id="image" v-model="image" />
+      <label for="birthday">Birthday:</label>
+      <input type="text" id="birthday" v-model="birthday" />
       <label for="description">Description:</label>
       <input type="description" id="description" v-model="description" />
       <label for="organ1">Organ 1:</label>
@@ -12,10 +12,22 @@
       <label for="cost1">Cost:</label>
       <input type="cost1" id="cost1" v-model="cost1" />
     </form>
-    <button class="create" @click="pleasework()">Create!</button>
+    <button class="create" @click="Create()">Create!</button>
     <nav>
       <RouterLink to="/organshop" class="organshop">Not interested in selling? Buy!</RouterLink>
     </nav>
+  </div>
+  <div>
+    <h1>Buy Organs</h1>
+    <sub v-for="items in info" :key="items.name">
+      <div class="organcards">
+        <h2>{{ items.name }}</h2>
+        <p>{{ items.birthday }}</p>
+        <p>{{ items.description }}</p>
+        <p>{{ items.organ1 }}</p>
+        <p>{{ items.cost1 }}</p>
+      </div>
+    </sub>
   </div>
 </template>
 
@@ -24,16 +36,43 @@ import { RouterLink } from 'vue-router'
 import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 const name = ref('')
-const image = ref('')
+const birthday = ref('')
 const description = ref('')
 const organ1 = ref('')
 const cost1 = ref('')
-const help = ref([])
+const info = ref([])
 
 async function pleasework() {
   let { data } = await supabase.from('people').select('*')
-  help.value = data
+  info.value = data
   console.log(data)
+}
+
+async function Create() {
+  console.log('test')
+  try {
+    await supabase.from('people').insert([
+      {
+        name: 'Oracle',
+        birthday: 'dsrfilo;g',
+        description: 'dsrfilo;g',
+        organ1: 'dsrfilo;g',
+        cost1: 'dsrfilo;g'
+      }
+    ])
+    info.value.push(name, birthday, description, organ1, cost1)
+    console.log(info.value)
+    name.value = ''
+    birthday.value = ''
+    description.value = ''
+    organ1.value = ''
+    cost1.value = ''
+    console.log('try')
+  } catch (error) {
+    console.log('catch')
+
+    console.log(error)
+  }
 }
 
 onMounted(() => {
@@ -75,7 +114,7 @@ h1 {
   width: 80px;
 }
 #name,
-#image,
+#birthday,
 #description,
 #organ1,
 #cost1 {
