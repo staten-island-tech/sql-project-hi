@@ -1,22 +1,10 @@
 <template>
-  <form class="help">
-    <label for="namedelete">Item Name You Want to Delete:</label>
-    <input type="text" id="namedelete" v-model="namedelete" />
-    <button class="delete" @click="Delete(), refreshPage()">Delete!</button>
-  </form>
+  <nav>
+    <RouterLink to="/organshop">Store</RouterLink>
+    <RouterLink to="/cart">Cart</RouterLink>
+    <RouterLink to="/logout">Logout</RouterLink>
+  </nav>
 
-  <div class="organshop">
-    <h1>Buy Organs</h1>
-    <sub v-for="items in info" :key="items.name">
-      <div class="organcards">
-        <h2>{{ items.name }}</h2>
-        <p>{{ items.birthday }}</p>
-        <p>{{ items.description }}</p>
-        <p>{{ items.organ }}</p>
-        <p>{{ items.cost }}</p>
-      </div>
-    </sub>
-  </div>
   <div class="createnew">
     <h1>Create New Listing</h1>
     <form class="reqs">
@@ -56,7 +44,14 @@ async function pleasework() {
 
 async function Delete() {
   try {
-    await supabase.from('gonnalosemymind').delete().match({ name: 'ABBY labby' })
+    await supabase
+      .from('gonnalosemymind')
+      .delete([
+        {
+          deletename: deletename.value
+        }
+      ])
+      .match({ name: 'help' })
   } catch (error) {
     console.log('catch')
     console.log(error)
@@ -96,25 +91,28 @@ onMounted(() => {
 </script>
 
 <style scoped>
-h1 {
-  font-family: 'Shrikhand', cursive;
-  font-size: 3rem;
-}
-.createnew,
-.organshop {
+.createnew {
   margin: auto;
   padding: 2rem;
-  font-size: 1.4rem;
+  font-size: 6rem;
   font-family: 'Jaldi', sans-serif;
-  background: rgb(130, 148, 196);
-  width: 450px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  background: var(--secondary);
+  width: 60rem;
+  border-radius: 3rem;
+  color: var(--tertiary);
+  border: 0.5rem solid var(--fourth);
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-.organshop {
-  font-size: 1.2rem;
+h2 {
+  font-size: 3rem;
   margin-top: 1rem;
-  color: black;
+  color: var(--tertiary);
+  margin-bottom: 0rem;
+}
+.signup {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--tertiary);
   display: flex;
   flex-direction: column;
 }
@@ -123,24 +121,19 @@ h1 {
   flex-direction: column;
 }
 .create {
-  margin-top: 20px;
-  font-size: 1rem;
+  margin-top: 2rem;
+  font-size: 2.5rem;
   border: none;
   border-radius: 15px;
-  font-family: 'Jaldi', sans-serif;
-  width: 80px;
+  width: 10rem;
+  color: var(--tertiary);
 }
 #name,
-#birthday,
 #description,
-#organ,
-#cost {
+#birthday,
+#cost,
+#organ {
   border: none;
   height: 40px;
-}
-.organcards {
-  background-color: white;
-  margin: 1rem;
-  border-radius: 20px;
 }
 </style>

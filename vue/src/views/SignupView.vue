@@ -19,38 +19,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 const email = ref('')
 const username = ref('')
 const password = ref('')
-export default {
-  components: { supabase },
-  data() {
-    return {
-      username,
-      email,
-      password
-    }
-  },
-  methods: {
-    async SignUp() {
-      try {
-        console.log(email.value, username.value, password.value)
-        const { error } = await supabase.auth.signUp({
-          email: email.value,
-          username: username.value,
-          password: password.value
-        })
-        if (error) throw error
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  }
-}
 </script>
 
 <style scoped>
