@@ -1,9 +1,9 @@
-<template>  
-
-<form class="help">
-  <label for="namedelete">Item Name You Want to Delete:</label> <input type="text" id="namedelete" v-model="namedelete"/>
-  <button class="delete" @click="Delete(), refreshPage()">Delete!</button>
-</form>
+<template>
+  <form class="help">
+    <label for="namedelete">Item Name You Want to Delete:</label>
+    <input type="text" id="namedelete" v-model="namedelete" />
+    <button class="delete" @click="Delete(), refreshPage()">Delete!</button>
+  </form>
 
   <div class="organshop">
     <h1>Buy Organs</h1>
@@ -14,7 +14,6 @@
         <p>{{ items.description }}</p>
         <p>{{ items.organ }}</p>
         <p>{{ items.cost }}</p>
-        
       </div>
     </sub>
   </div>
@@ -31,9 +30,8 @@
       <label for="cost">Cost:</label>
       <input type="cost" id="cost" v-model="cost" />
     </form>
-    <button class="create" @click="Create(), refreshPage()">Create!</button>
+    <button class="create" @click="Create()">Create!</button>
   </div>
-
 </template>
 
 <script setup>
@@ -46,9 +44,9 @@ const organ = ref('')
 const cost = ref('')
 const info = ref([])
 
-async function refreshPage(){
-    window.location.reload();
-} 
+async function refreshPage() {
+  window.location.reload()
+}
 
 async function pleasework() {
   let { data } = await supabase.from('gonnalosemymind').select('*')
@@ -56,14 +54,10 @@ async function pleasework() {
   console.log(data)
 }
 
-async function Delete(){
+async function Delete() {
   try {
-  await supabase.from('gonnalosemymind')
-  .delete([{
-    deletename: deletename.value,
-  }])
-  .match({ name: 'help' })} 
-  catch (error) {
+    await supabase.from('gonnalosemymind').delete().match({ name: 'ABBY labby' })
+  } catch (error) {
     console.log('catch')
     console.log(error)
   }
@@ -78,7 +72,7 @@ async function Create() {
         birthday: birthday.value,
         description: description.value,
         organ: organ.value,
-        cost: cost.value,
+        cost: cost.value
       }
     ])
     info.value.push(name, birthday, description, organ, cost)
@@ -99,7 +93,6 @@ async function Create() {
 onMounted(() => {
   pleasework()
 })
-
 </script>
 
 <style scoped>
@@ -107,7 +100,8 @@ h1 {
   font-family: 'Shrikhand', cursive;
   font-size: 3rem;
 }
-.createnew, .organshop {
+.createnew,
+.organshop {
   margin: auto;
   padding: 2rem;
   font-size: 1.4rem;
@@ -115,7 +109,7 @@ h1 {
   background: rgb(130, 148, 196);
   width: 450px;
   border-radius: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 .organshop {
   font-size: 1.2rem;
@@ -144,7 +138,7 @@ h1 {
   border: none;
   height: 40px;
 }
-.organcards{
+.organcards {
   background-color: white;
   margin: 1rem;
   border-radius: 20px;
