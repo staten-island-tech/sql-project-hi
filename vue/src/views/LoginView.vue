@@ -1,6 +1,14 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
+  <nav>
+    <RouterLink to="/">Store</RouterLink>
+    <RouterLink to="/login">Login</RouterLink>
+  </nav>
+  <h1>Login</h1>
   <div class="login">
-    <h1>Login</h1>
     <form class="reqs">
       <label for="email">Email:</label> <input type="text" id="username" v-model="email" />
       <label for="username">Username:</label>
@@ -48,23 +56,28 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  font-family: 'Shrikhand', cursive;
-  font-size: 3rem;
-}
 .login {
   margin: auto;
   padding: 2rem;
-  font-size: 1.4rem;
+  font-size: 6rem;
   font-family: 'Jaldi', sans-serif;
-  background: rgb(130, 148, 196);
-  width: 450px;
-  border-radius: 20px;
+  background: var(--secondary);
+  width: 60rem;
+  border-radius: 3rem;
+  color: var(--tertiary);
+  border: 0.5rem solid var(--fourth);
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: var(--tertiary);
+  margin-bottom: 0rem;
 }
 .signup {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-top: 1rem;
-  color: black;
+  color: var(--tertiary);
   display: flex;
   flex-direction: column;
 }
@@ -73,12 +86,12 @@ h1 {
   flex-direction: column;
 }
 .loginbtn {
-  margin-top: 20px;
-  font-size: 1rem;
+  margin-top: 2rem;
+  font-size: 2.5rem;
   border: none;
   border-radius: 15px;
-  font-family: 'Jaldi', sans-serif;
-  width: 80px;
+  width: 10rem;
+  color: var(--tertiary);
 }
 #username,
 #password {

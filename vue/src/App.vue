@@ -1,33 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <h1>Black Market</h1>
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/login">Login</RouterLink>
-  </nav>
-
   <RouterView />
 </template>
 
-<style scoped>
-h1 {
-  font-family: 'Shrikhand', cursive;
-  margin-top: 3rem;
-  font-size: 4rem;
-  color: rgb(130, 148, 196);
-}
-
+<style>
 nav {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-align: center;
-  margin-top: 1rem;
   font-family: 'Jaldi', sans-serif;
   font-weight: bold;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 nav a.router-link-exact-active {

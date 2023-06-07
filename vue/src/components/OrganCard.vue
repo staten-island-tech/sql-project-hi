@@ -75,6 +75,7 @@ h2 {
   font-size: 3vh;
 }
 .desc {
+  color: aliceblue; /* sry i just needed it to stop giving me errors  */
 }
 .name {
   font-weight: bold;
