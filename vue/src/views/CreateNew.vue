@@ -1,7 +1,7 @@
 <template>  
 
 <form class="help">
-  <label for="deletename">Item Name You Want to Delete:</label> <input type="text" id="deletename" v-model="deletename"/>
+  <label for="namedelete">Item Name You Want to Delete:</label> <input type="text" id="namedelete" v-model="namedelete"/>
   <button class="delete" @click="Delete(), refreshPage()">Delete!</button>
 </form>
 
@@ -58,31 +58,15 @@ async function pleasework() {
 
 async function Delete(){
   try {
-    await supabase.from('gonnalosemymind').delete([
-      {
-        deletename: deletename.value,
-      }
-    ])
-    info.match(name)
-    deletename.value = name.value
-    console.log('try')
-  } catch (error) {
-    console.log('catch')
-
-    console.log(error)
-  }
-/*  try {
-    await supabase.from('gonnalosemymind')
-      .delete([{
-      deletename: deletename.value,
-      }])
-      deletename.value = ''
-      .match({ name: deletename.value })
-} 
+  await supabase.from('gonnalosemymind')
+  .delete([{
+    deletename: deletename.value,
+  }])
+  .match({ name: 'help' })} 
   catch (error) {
     console.log('catch')
     console.log(error)
-  } */
+  }
 }
 
 async function Create() {
