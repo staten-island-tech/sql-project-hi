@@ -7,8 +7,6 @@
   <div class="signup">
     <form class="reqs">
       <label for="email">Email:</label> <input type="text" id="email" v-model="email" />
-      <label for="username">Username:</label>
-      <input type="text" id="username" v-model="username" />
       <label for="password">Password:</label>
       <input type="password" id="password" v-model="password" />
     </form>
@@ -19,13 +17,36 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 const email = ref('')
-const username = ref('')
 const password = ref('')
+export default {
+  components: {supabase},
+  data() {
+    return{
+      email, 
+      password
+    }
+  },
+  methods: {
+    async SignUp() {
+      try{
+        console.log(email.value, password.value)
+        const {error} = await supabase.auth.signUp({
+          email: email.value,
+          password: password.value,
+        })
+        if (error) throw error
+      } catch (error) {
+        console.error(error)
+        console.log("you suck")
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
