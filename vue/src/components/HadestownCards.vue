@@ -3,7 +3,7 @@
     <h2>{{ name }}</h2>
     <img
       src="https://i.scdn.co/image/ab67616d00001e02b62a5129d9efa26386143622"
-      alt="Hadestown Spotify Image"
+      alt="Hadestown Spotify Image of Song"
     />
     <!--     <a href={{ spotify }}><img src="https://i.scdn.co/image/ab67616d00001e02b62a5129d9efa26386143622" alt="Hadestown Spotify Image"></a> -->
     <h3>Ranking: #{{ ranking }}</h3>
