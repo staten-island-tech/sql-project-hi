@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router'
   <h1>Login</h1>
   <div class="login">
     <form class="reqs">
-      <label for="email">Email:</label> <input type="text" id="username" v-model="email" />
+      <label for="email">Email:</label> <input type="text" id="email" v-model="email" />
       <label for="username">Username:</label>
       <input type="text" id="username" v-model="username" />
       <label for="password">Password:</label>
@@ -19,6 +19,7 @@ import { RouterLink } from 'vue-router'
     <button class="loginbtn" @click="Login()">Login</button>
     <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
   </div>
+    <button class="logoutbtn" @click="LogOut()">Logout!</button>
 </template>
 
 <script>
@@ -34,14 +35,14 @@ export default {
     return {
       email,
       password,
-      username
+      username, 
     }
   },
   methods: {
     async Login() {
       try {
         console.log(email.value, username.value, password.value)
-        const { error } = await await supabase.auth.signInWithPassword({
+        const { error } = await supabase.auth.signInWithPassword({
           email: email.value,
           password: password.value,
           username: username.value
@@ -50,8 +51,18 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    },  
+    async LogOut() {
+      try{
+      const {error} = await supabase.auth.signOut(
+        console.log(email.value))
+        if (error) throw error
+      } catch (error) {
+        console.error(error)
+        console.log("you suck")
+      }
     }
-  }
+  },
 }
 </script>
 
@@ -85,7 +96,7 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-.loginbtn {
+.loginbtn, .logoutbtn {
   margin-top: 2rem;
   font-size: 2.5rem;
   border: none;
@@ -94,6 +105,7 @@ h2 {
   color: var(--tertiary);
 }
 #username,
+#email,
 #password {
   border: none;
   height: 40px;
