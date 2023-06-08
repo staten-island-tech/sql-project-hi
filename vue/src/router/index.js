@@ -29,7 +29,7 @@ const router = createRouter({
       path: '/organshop',
       name: 'organshop',
       meta: {
-        requireLogin: true
+        requireSignIn: true
       },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route

@@ -6,13 +6,12 @@ import { RouterLink } from 'vue-router'
   <nav>
     <RouterLink to="/">Store</RouterLink>
     <RouterLink to="/login">Login</RouterLink>
+    <RouterLink to="organshop">Store Pt2</RouterLink>
   </nav>
   <h1>Login</h1>
   <div class="login">
     <form class="reqs">
       <label for="email">Email:</label> <input type="text" id="email" v-model="email" />
-      <label for="username">Username:</label>
-      <input type="text" id="username" v-model="username" />
       <label for="password">Password:</label>
       <input type="password" id="password" v-model="password" />
     </form>
@@ -28,24 +27,21 @@ import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 const email = ref('')
 const password = ref('')
-const username = ref('')
 export default {
   components: { supabase },
   data() {
     return {
       email,
       password,
-      username, 
     }
   },
   methods: {
     async Login() {
       try {
-        console.log(email.value, username.value, password.value)
+        console.log(email.value, password.value)
         const { error } = await supabase.auth.signInWithPassword({
           email: email.value,
           password: password.value,
-          username: username.value
         })
         if (error) throw error
       } catch (error) {
