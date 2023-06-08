@@ -5,11 +5,11 @@
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
 
-  <form class="help">
-    <!-- <label for="namedelete">Item Name You Want to Delete:</label>
-    <input type="text" id="namedelete" v-model="namedelete" /> -->
+ <!--  <form class="help">
+     <label for="namedelete">Item Name You Want to Delete:</label>
+    <input type="text" id="namedelete" v-model="namedelete" />
     <button class="delete" @click="Delete()">Delete!</button>
-  </form>
+  </form> -->
 
   <div class="organshop">
     <h1>Buy Organs</h1>
