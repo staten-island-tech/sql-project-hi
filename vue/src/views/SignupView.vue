@@ -11,9 +11,6 @@
       <input type="password" id="password" v-model="password" />
     </form>
     <button class="signupbtn" @click="SignUp()">Signup</button>
-    <nav>
-      <RouterLink to="/login" class="login">Already have an account? Login!</RouterLink>
-    </nav>
   </div>
 </template>
 
@@ -58,17 +55,11 @@ export default {
   background: var(--secondary);
   width: 60rem;
   border-radius: 20px;
-  color: var(--tertiary);
+  color: var(--five);
   border: 0.5rem solid var(--fourth);
   box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-.login {
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: var(--tertiary);
-  display: flex;
-  flex-direction: column;
-}
+
 .reqs {
   display: flex;
   flex-direction: column;

@@ -16,17 +16,19 @@ body,
   --white: #ffffff;
   --color1: #362a1d;
   --color2: #fbeec7;
-  --color3: #b50d15;
+  --color3: #dc3840;
   --color4: #1b150e;
   --color5: #ffebd7;
   --color6: #8294c4;
   --color7: #184a76;
+  --color8: #a31d24;
 
   /*Intentions*/
   --primary: var(--color1);
   --secondary: var(--color2);
   --tertiary: var(--color3);
   --fourth: var(--color4);
+  --five: var(--color8);
 
   /*Typography*/
   --h1: 7.594rem;

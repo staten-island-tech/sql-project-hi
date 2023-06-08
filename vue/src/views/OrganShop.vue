@@ -62,7 +62,7 @@ onMounted(() => {
   background: var(--secondary);
   width: 60rem;
   border-radius: 3rem;
-  color: var(--tertiary);
+  color: var(--five);
   border: 0.5rem solid var(--fourth);
   box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
@@ -85,14 +85,5 @@ h2 {
 }
 p {
   font-size: 2rem;
-}
-.delete{
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  border: none;
-  border-radius: 15px;
-  width: 10rem;
-  color: var(--tertiary);
 }
 </style>

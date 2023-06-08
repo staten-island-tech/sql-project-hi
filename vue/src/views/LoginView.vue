@@ -38,7 +38,6 @@ export default {
   methods: {
     async Login() {
       try {
-        console.log(email.value, password.value)
         const { error } = await supabase.auth.signInWithPassword({
           email: email.value,
           password: password.value,
@@ -71,20 +70,20 @@ export default {
   background: var(--secondary);
   width: 60rem;
   border-radius: 3rem;
-  color: var(--tertiary);
+  color: var(--five);
   border: 0.5rem solid var(--fourth);
   box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
 h2 {
   font-size: 3rem;
   margin-top: 1rem;
-  color: var(--tertiary);
+  color: var(--five);
   margin-bottom: 0rem;
 }
 .signup {
   font-size: 2rem;
   margin-top: 1rem;
-  color: var(--tertiary);
+  color: var(--five);
   display: flex;
   flex-direction: column;
 }
@@ -98,7 +97,7 @@ h2 {
   border: none;
   border-radius: 15px;
   width: 10rem;
-  color: var(--tertiary);
+  color: var(--five);
 }
 #username,
 #email,
