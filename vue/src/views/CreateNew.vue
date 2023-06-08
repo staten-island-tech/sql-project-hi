@@ -1,6 +1,6 @@
-<template>  
+<template>
   <nav>
-    <RouterLink to="/organshop">Store</RouterLink>    
+    <RouterLink to="/organshop">Store</RouterLink>
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
@@ -14,7 +14,7 @@
       <label for="description">Description:</label>
       <input type="description" id="description" v-model="description" />
       <label for="organ">Choose an Organ:</label>
-        <select name="organ" id="organ" v-model="organ">
+      <select name="organ" id="organ" v-model="organ">
         <option value="heart">Heart</option>
         <option value="kidney">Kidney</option>
         <option value="brain">Brain</option>
@@ -25,7 +25,6 @@
     </form>
     <button class="create" @click="Create()">Create!</button>
   </div>
-
 </template>
 
 <script setup>
@@ -59,7 +58,7 @@ async function Create() {
         birthday: birthday.value,
         description: description.value,
         organ: organ.value,
-        cost: cost.value,
+        cost: cost.value
       }
     ])
     info.value.push(name, birthday, description, organ, cost)
@@ -78,10 +77,8 @@ async function Create() {
 }
 
 onMounted(() => {
-  pleasework(),
-  pleaseworkpt2()
+  pleasework(), pleaseworkpt2()
 })
-
 </script>
 
 <style scoped>
@@ -97,7 +94,7 @@ onMounted(() => {
   border: 0.5rem solid var(--fourth);
   box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-.reqs{
+.reqs {
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -113,7 +110,7 @@ h2 {
 p {
   font-size: 2rem;
 }
-.create{
+.create {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 2.5rem;

@@ -15,8 +15,7 @@ import { supabase } from '../lib/supabaseClient.js'
 export default {
   components: { supabase },
   data() {
-    return {
-    }
+    return {}
   },
   methods: {
     async Logout() {
@@ -41,4 +40,5 @@ export default {
   border-radius: 15px;
   width: 10rem;
   color: var(--tertiary);
-}</style>
+}
+</style>

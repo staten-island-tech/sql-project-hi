@@ -21,25 +21,25 @@ import { supabase } from '../lib/supabaseClient.js'
 const email = ref('')
 const password = ref('')
 export default {
-  components: {supabase},
+  components: { supabase },
   data() {
-    return{
-      email, 
+    return {
+      email,
       password
     }
   },
   methods: {
     async SignUp() {
-      try{
+      try {
         console.log(email.value, password.value)
-        const {error} = await supabase.auth.signUp({
+        const { error } = await supabase.auth.signUp({
           email: email.value,
-          password: password.value,
+          password: password.value
         })
         if (error) throw error
       } catch (error) {
         console.error(error)
-        console.log("you suck")
+        console.log('you suck')
       }
     }
   }

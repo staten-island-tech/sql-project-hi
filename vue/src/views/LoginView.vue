@@ -18,13 +18,14 @@ import { RouterLink } from 'vue-router'
     <button class="loginbtn" @click="Login()">Login</button>
     <RouterLink to="/signup" class="signup">Don't have an account? Create one!</RouterLink>
   </div>
-    <button class="logoutbtn" @click="LogOut()">Logout!</button>
+  <button class="logoutbtn" @click="LogOut()">Logout!</button>
 </template>
 
 <script>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
+import Router from '../router/index'
 const email = ref('')
 const password = ref('')
 export default {
@@ -32,7 +33,7 @@ export default {
   data() {
     return {
       email,
-      password,
+      password
     }
   },
   methods: {
@@ -40,24 +41,24 @@ export default {
       try {
         const { error } = await supabase.auth.signInWithPassword({
           email: email.value,
-          password: password.value,
+          password: password.value
         })
         if (error) throw error
+        this.$router.push({ path: '/organshop' })
       } catch (error) {
         console.error(error)
       }
-    },  
+    },
     async LogOut() {
-      try{
-      const {error} = await supabase.auth.signOut(
-        console.log(email.value))
+      try {
+        const { error } = await supabase.auth.signOut(console.log(email.value))
         if (error) throw error
       } catch (error) {
         console.error(error)
-        console.log("you suck")
+        console.log('you suck')
       }
     }
-  },
+  }
 }
 </script>
 
@@ -91,7 +92,8 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-.loginbtn, .logoutbtn {
+.loginbtn,
+.logoutbtn {
   margin-top: 2rem;
   font-size: 2.5rem;
   border: none;

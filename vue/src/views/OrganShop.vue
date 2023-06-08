@@ -1,11 +1,11 @@
 <template>
   <nav>
-    <RouterLink to="/organshop">Store</RouterLink>    
+    <RouterLink to="/organshop">Store</RouterLink>
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
 
- <!--  <form class="help">
+  <!--  <form class="help">
      <label for="namedelete">Item Name You Want to Delete:</label>
     <input type="text" id="namedelete" v-model="namedelete" />
     <button class="delete" @click="Delete()">Delete!</button>
@@ -38,10 +38,7 @@ async function pleasework() {
 
 async function Delete() {
   try {
-    await supabase
-      .from('gonnalosemymind')
-      .delete()
-      .match({ name: 'help' })
+    await supabase.from('gonnalosemymind').delete().match({ name: 'help' })
   } catch (error) {
     console.log('catch')
     console.log(error)
@@ -66,11 +63,11 @@ onMounted(() => {
   border: 0.5rem solid var(--fourth);
   box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-.organcards{
+.organcards {
   margin-top: 50px;
   margin-left: auto;
-  margin-right: auto; 
-  width: 40rem; 
+  margin-right: auto;
+  width: 40rem;
   padding: 1rem;
   border-radius: 15px;
   border: white;
