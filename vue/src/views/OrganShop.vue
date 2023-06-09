@@ -5,9 +5,7 @@
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
 <form class="help">
-     <label for="name">Item Name You Want to Delete:</label>
-    <input type="text" id="name" v-model="namedelete" />
-    <button class="delete" @click="Delete()">Delete!</button>
+    <button class="deletebtn" @click="Delete()">Whalen has to teach us! He can't be on this website! Delete Any Whalens</button>
   </form>
 
   <div class="organshop">
@@ -37,14 +35,7 @@ async function pleasework() {
 }
 
 async function Delete() {
-  try {
-    namedelete = namedelete.value
-    await supabase.from('gonnalosemymind').delete().match({ name: namedelete.value })
-    namedelete.value = ''
-    console.log("ok")
-  } catch (error) {
-    console.log('catch')
-  }
+    await supabase.from('gonnalosemymind').delete().match({ name: 'whalen' })
 }
 
 onMounted(() => {
@@ -75,7 +66,7 @@ onMounted(() => {
   border: white;
   background-color: white;
 }
-h2 {
+h2, #name {
   font-size: 3rem;
   margin-top: 1rem;
   color: var(--tertiary);
@@ -92,5 +83,7 @@ p {
   border-radius: 15px;
   width: 10rem;
   color: var(--five);
+  width: 400px;
+  margin-bottom: 2rem;
 }
 </style>
