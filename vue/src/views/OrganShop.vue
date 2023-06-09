@@ -4,10 +4,10 @@
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
-<form class="help">
-     <label for="name">Item Name You Want to Delete:</label>
+  <form class="help">
+    <label for="name">Item Name You Want to Delete:</label>
     <input type="text" id="name" v-model="namedelete" />
-    <button class="delete" @click="Delete()">Delete!</button>
+    <button class="deletebtn" @click="Delete()">Delete!</button>
   </form>
 
   <div class="organshop">
@@ -41,7 +41,7 @@ async function Delete() {
     namedelete = namedelete.value
     await supabase.from('gonnalosemymind').delete().match({ name: namedelete.value })
     namedelete.value = ''
-    console.log("ok")
+    console.log('ok')
   } catch (error) {
     console.log('catch')
   }
@@ -92,5 +92,8 @@ p {
   border-radius: 15px;
   width: 10rem;
   color: var(--five);
+}
+#name {
+  font-size: 3rem;
 }
 </style>
