@@ -4,12 +4,11 @@
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
-
-  <!--  <form class="help">
-     <label for="namedelete">Item Name You Want to Delete:</label>
-    <input type="text" id="namedelete" v-model="namedelete" />
+<form class="help">
+     <label for="name">Item Name You Want to Delete:</label>
+    <input type="text" id="name" v-model="namedelete" />
     <button class="delete" @click="Delete()">Delete!</button>
-  </form> -->
+  </form>
 
   <div class="organshop">
     <h1>Buy Organs</h1>
@@ -29,6 +28,7 @@
 import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
 const info = ref([])
+const namedelete = ref('')
 
 async function pleasework() {
   let { data } = await supabase.from('gonnalosemymind').select('*')
@@ -38,10 +38,12 @@ async function pleasework() {
 
 async function Delete() {
   try {
-    await supabase.from('gonnalosemymind').delete().match({ name: 'help' })
+    namedelete = namedelete.value
+    await supabase.from('gonnalosemymind').delete().match({ name: namedelete.value })
+    namedelete.value = ''
+    console.log("ok")
   } catch (error) {
     console.log('catch')
-    console.log(error)
   }
 }
 
@@ -82,5 +84,13 @@ h2 {
 }
 p {
   font-size: 2rem;
+}
+.deletebtn {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  border: none;
+  border-radius: 15px;
+  width: 10rem;
+  color: var(--five);
 }
 </style>

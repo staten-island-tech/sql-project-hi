@@ -50,7 +50,6 @@ async function pleaseworkpt2() {
 }
 
 async function Create() {
-  console.log('test')
   try {
     await supabase.from('gonnalosemymind').insert([
       {
