@@ -4,8 +4,10 @@
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
-<form class="help">
-    <button class="deletebtn" @click="Delete()">Whalen has to teach us! He can't be on this website! Delete Any Whalens</button>
+  <form class="help">
+    <button class="deletebtn" @click="Delete()">
+      Whalen has to teach us! He can't be on this website! Delete Any Whalens
+    </button>
   </form>
 
   <div class="organshop">
@@ -35,7 +37,7 @@ async function pleasework() {
 }
 
 async function Delete() {
-    await supabase.from('gonnalosemymind').delete().match({ name: 'whalen' })
+  await supabase.from('gonnalosemymind').delete().match({ name: 'whalen' })
 }
 
 onMounted(() => {
@@ -66,7 +68,8 @@ onMounted(() => {
   border: white;
   background-color: white;
 }
-h2, #name {
+h2,
+#name {
   font-size: 3rem;
   margin-top: 1rem;
   color: var(--tertiary);
@@ -85,5 +88,8 @@ p {
   color: var(--five);
   width: 400px;
   margin-bottom: 2rem;
+}
+#name {
+  font-size: 3rem;
 }
 </style>
