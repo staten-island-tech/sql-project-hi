@@ -10,7 +10,7 @@
     <form class="reqs">
       <label for="name">Name:</label> <input type="text" id="name" v-model="name" />
       <label for="birthday">Birthday:</label>
-      <input type="text" id="birthday" v-model="birthday" />
+      <input type="date" id="birthday" v-model="birthday" />
       <label for="description">Description:</label>
       <input type="description" id="description" v-model="description" />
       <label for="organ">Choose an Organ:</label>
