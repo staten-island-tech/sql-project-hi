@@ -67,7 +67,8 @@ async function Create() {
     birthday.value = ''
     description.value = ''
     organ.value = ''
-    cost.value = ''
+    cost.value = await supabase.from('costs').select('*')
+    console.log(cost.value)
     console.log('try')
   } catch (error) {
     console.log('catch')
