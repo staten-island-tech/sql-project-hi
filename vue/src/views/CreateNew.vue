@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <RouterLink to="/organshop">Store</RouterLink>
+    <RouterLink to="/organshop">Organ Listings</RouterLink>
     <RouterLink to="/createnew">New Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
