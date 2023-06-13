@@ -5,7 +5,7 @@
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
   <form class="help">
-    <button class="deletebtn" @click="Delete()">
+    <button class="deletebtn" @click="DeleteMr(), DeleteWhalen()">
       Whalen has to teach us! He can't be on this website! Delete Any Whalens
     </button>
   </form>
@@ -36,8 +36,12 @@ async function pleasework() {
   console.log(data)
 }
 
-async function Delete() {
-  await supabase.from('gonnalosemymind').delete().match({ name: 'whalen' })
+async function DeleteMr() {
+  await supabase.from('gonnalosemymind').delete().ilike('name', '%mr whalen%')
+}
+
+async function DeleteWhalen() {
+  await supabase.from('gonnalosemymind').delete().ilike('name', '%whalen%')
 }
 
 onMounted(() => {
