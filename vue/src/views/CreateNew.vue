@@ -2,6 +2,7 @@
   <nav>
     <RouterLink to="/organshop">Organ Listings</RouterLink>
     <RouterLink to="/createnew">New Listing</RouterLink>
+    <RouterLink to="/edit">Edit Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
 

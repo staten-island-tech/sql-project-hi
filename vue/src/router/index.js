@@ -20,9 +20,6 @@ const router = createRouter({
     {
       path: '/signup',
       name: 'signup',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/SignupView.vue')
     },
     {
@@ -31,26 +28,22 @@ const router = createRouter({
       meta: {
         requiresAuth: true
       },
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/OrganShop.vue')
     },
     {
       path: '/logout',
       name: 'logout',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/LogoutView.vue')
     },
     {
       path: '/createnew',
       name: 'createnew',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/CreateNew.vue')
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: () => import('../views/EditCard.vue')
     }
   ]
 })

@@ -2,6 +2,7 @@
   <nav>
     <RouterLink to="/organshop">Organ Listings</RouterLink>
     <RouterLink to="/createnew">New Listing</RouterLink>
+    <RouterLink to="/edit">Edit Listing</RouterLink>
     <RouterLink to="/login">Logout</RouterLink>
   </nav>
   <form class="help">
@@ -19,6 +20,7 @@
         <p>Description: {{ items.description }}</p>
         <p>Organ: {{ items.organ }}</p>
         <p>Cost: ${{ items.cost }}</p>
+        <!--         <RouterLink to="/edit/{{items.id}}" class="edit-link">Edit</RouterLink> -->
       </div>
     </sub>
   </div>
@@ -27,6 +29,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient.js'
+import { RouterLink } from 'vue-router'
 const info = ref([])
 const namedelete = ref('')
 
@@ -95,5 +98,8 @@ p {
 }
 #name {
   font-size: 3rem;
+}
+.edit-link {
+  color: aqua;
 }
 </style>
